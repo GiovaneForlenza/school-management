@@ -22,10 +22,25 @@
       border-radius: 3px;
       text-align: left;
       color: #ee2c57;
+      width: 100%;
+      box-sizing: border-box;
       &:hover {
         background: #ee2c57;
         color: white;
         cursor: pointer;
+      }
+      button {
+        border: none;
+        background: transparent;
+      }
+    }
+    .disabled {
+      background: #ccc;
+      color: #000;
+      &:hover {
+        background: #ccc;
+        color: #000;
+        cursor: auto;
       }
     }
   }

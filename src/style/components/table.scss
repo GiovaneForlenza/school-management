@@ -17,11 +17,12 @@
     thead {
       margin-bottom: 20px;
       th {
-        background: #f9fafb;
+        background: #ededee;
         padding: 15px;
         box-sizing: border-box;
-        border-bottom: 1px #ccc solid;
         user-select: none;
+        position: sticky;
+        top: 0;
       }
     }
     tbody {
@@ -39,6 +40,9 @@
           box-sizing: border-box;
           padding: 15px;
         }
+      }
+      .selected {
+        text-shadow: 0px 0px 1px black;
       }
     }
   }

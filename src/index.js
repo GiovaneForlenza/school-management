@@ -5,13 +5,16 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { DatabaseContextProvider } from "./context/DatabaseContext";
 import { LoggedInUserContextProvider } from "./context/LoggedInUserContext";
+import { SelectedClassContextProvider } from "./context/SelectedClassContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <DatabaseContextProvider>
       <LoggedInUserContextProvider>
-        <App />
+        <SelectedClassContextProvider>
+          <App />
+        </SelectedClassContextProvider>
       </LoggedInUserContextProvider>
     </DatabaseContextProvider>
   </React.StrictMode>

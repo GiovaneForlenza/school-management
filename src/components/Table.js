@@ -2,6 +2,7 @@ import React from "react";
 import TableLine from "./table/TableLine";
 import "../style/components/table.scss";
 import TableHeader from "./table/TableHeader";
+import { CLASS_STATUS } from "../context/DatabaseContext";
 
 function Table({ headers, data }) {
   return (
@@ -16,7 +17,8 @@ function Table({ headers, data }) {
         </thead>
         <tbody>
           {data.map((line, id) => {
-            return <TableLine line={line} key={id} />;
+            // if (line.status === CLASS_STATUS.ACTIVE)
+              return <TableLine line={line} key={id} />;
           })}
         </tbody>
       </table>
