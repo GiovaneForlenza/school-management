@@ -10,4 +10,14 @@ export const staff = [
     name: "Antares",
     position: SCHOOL_POSITION.TEACHER,
   },
+  {
+    id:3,
+    name: "Medusa",
+    position: SCHOOL_POSITION.TEACHER,
+  },
+  {
+    id: 4,
+    name: "Juli",
+    position: SCHOOL_POSITION.COORDINATOR,
+  },
 ];
