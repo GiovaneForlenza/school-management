@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { DatabaseContextProvider } from "./context/DatabaseContext";
 import { LoggedInUserContextProvider } from "./context/LoggedInUserContext";
 import { SelectedClassContextProvider } from "./context/SelectedClassContext";
+import { ModalContextProvider } from "./context/ModalContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -13,7 +14,9 @@ root.render(
     <DatabaseContextProvider>
       <LoggedInUserContextProvider>
         <SelectedClassContextProvider>
-          <App />
+          <ModalContextProvider>
+            <App />
+          </ModalContextProvider>
         </SelectedClassContextProvider>
       </LoggedInUserContextProvider>
     </DatabaseContextProvider>

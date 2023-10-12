@@ -99,10 +99,11 @@ export const DatabaseContextProvider = (props) => {
     return data;
   };
 
+
   return (
     <DatabaseContext.Provider
       value={{
-        LOCAL_STORAGE_KEYS,        
+        LOCAL_STORAGE_KEYS,
         createInitialDBs,
         getDataFromKey,
         getClassesDataFromStaffId,

@@ -9,7 +9,7 @@ import {
 import { DatabaseContext } from "./context/DatabaseContext";
 
 function App() {
-  const { state, dispatch } = useContext(LoggedInUserContext);
+  const { userState, dispatch } = useContext(LoggedInUserContext);
   const { createInitialDBs } = useContext(DatabaseContext);
   useEffect(() => {
     createInitialDBs();
@@ -17,7 +17,7 @@ function App() {
     // HACK(Gionave): This is setting the ID to fetch the data from the DB, when doing login logic use this
     dispatch({ type: USER_REDUCER_ACTIONS.UPDATE_ID, payload: 1 });
   }, []);
-  return <div className="App">{state.id ? <Home /> : <LogIn />}</div>;
+  return <div className="App">{userState.id ? <Home /> : <LogIn />}</div>;
 }
 
 export default App;

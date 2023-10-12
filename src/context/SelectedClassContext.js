@@ -1,7 +1,7 @@
-import { React, useState, createContext, useReducer } from "react";
+import { React, useclassState, createContext, useReducer } from "react";
 export const SelectedClassContext = createContext();
 
-const INITIAL_STATE = {
+const INITIAL_classState = {
   id: null,
   name: null,
   code: null,
@@ -19,7 +19,7 @@ export const SELECTED_CLASS_REDUCER_ACTIONS = {
   UPDATE_CLASS: "UPDATE_CLASS",
 };
 
-function selectedClassReducer(state, action) {
+function selectedClassReducer(classState, action) {
   switch (action.type) {
     case SELECTED_CLASS_REDUCER_ACTIONS.UPDATE_CLASS:
       return {
@@ -36,14 +36,14 @@ function selectedClassReducer(state, action) {
         teacher: action.payload.teacher,
       };
     default:
-      return state;
+      return classState;
   }
 }
 
 export const SelectedClassContextProvider = (props) => {
-  const [state, dispatch] = useReducer(selectedClassReducer, INITIAL_STATE);
+  const [classState, dispatch] = useReducer(selectedClassReducer, INITIAL_classState);
   return (
-    <SelectedClassContext.Provider value={{ state, dispatch }}>
+    <SelectedClassContext.Provider value={{ classState, dispatch }}>
       {props.children}
     </SelectedClassContext.Provider>
   );

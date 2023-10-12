@@ -6,7 +6,7 @@ import {
 } from "../../context/SelectedClassContext";
 
 function TableLine({ line }) {
-  const { dispatch, state } = useContext(SelectedClassContext);
+  const { dispatch, classState } = useContext(SelectedClassContext);
   function handleClick() {
     dispatch({
       type: SELECTED_CLASS_REDUCER_ACTIONS.UPDATE_CLASS,
@@ -17,7 +17,7 @@ function TableLine({ line }) {
   return (
     <tr
       onClick={handleClick}
-      className={state.id === line.id ? "selected" : null}
+      className={classState.id === line.id ? "selected" : null}
     >
       <td>{line.name}</td>
       <td>{line.time}</td>

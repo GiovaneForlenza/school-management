@@ -3,7 +3,7 @@ import React, {  createContext, useReducer } from "react";
 
 export const LoggedInUserContext = createContext();
 
-const INITIAL_STATE = {
+const INITIAL_userState = {
   id: null,
   name: null,
   position: null,
@@ -18,29 +18,29 @@ export const USER_REDUCER_ACTIONS = {
   UPDATE_DATA: "UPDATE_DATA",
 };
 
-function loggedInUserReducer(state, action) {
+function loggedInUserReducer(userState, action) {
   switch (action.type) {
     case USER_REDUCER_ACTIONS.UPDATE_ID:
-      return { ...state, id: action.payload };
+      return { ...userState, id: action.payload };
     case USER_REDUCER_ACTIONS.UPDATE_NAME:
-      return { ...state, name: action.payload };
+      return { ...userState, name: action.payload };
     case USER_REDUCER_ACTIONS.UPDATE_POSITION:
-      return { ...state, position: action.payload };
+      return { ...userState, position: action.payload };
     case USER_REDUCER_ACTIONS.UPDATE_CLASSES:
-      return { ...state, classes: action.payload };
+      return { ...userState, classes: action.payload };
     // case USER_REDUCER_ACTIONS.UPDATE_DATA:
-    //   return { ...state, classes: action.payload };
+    //   return { ...userState, classes: action.payload };
     default:
-      return state;
+      return userState;
   }
 }
 
 export const LoggedInUserContextProvider = (props) => {
 
-  const [state, dispatch] = useReducer(loggedInUserReducer, INITIAL_STATE);
+  const [userState, dispatch] = useReducer(loggedInUserReducer, INITIAL_userState);
 
   return (
-    <LoggedInUserContext.Provider value={{ state, dispatch }}>
+    <LoggedInUserContext.Provider value={{ userState, dispatch }}>
       {props.children}
     </LoggedInUserContext.Provider>
   );
