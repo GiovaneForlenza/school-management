@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useContext, useEffect } from "react";
+import Home from "./pages/Home";
+import LogIn from "./pages/LogIn";
+import "./style/App.css";
+import {
+  LoggedInUserContext,
+  USER_REDUCER_ACTIONS,
+} from "./context/LoggedInUserContext";
+import { DatabaseContext } from "./context/DatabaseContext";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const { state, dispatch } = useContext(LoggedInUserContext);
+  const { createStaffDB } = useContext(DatabaseContext);
+  useEffect(() => {
+    createStaffDB();
+
+    // HACK(Gionave): This is setting the ID to fetch the data from the DB, when doing login logic use this
+    dispatch({ type: USER_REDUCER_ACTIONS.UPDATE_ID, payload: 2 });
+  }, []);
+  return <div className="App">{state.id ? <Home /> : <LogIn />}</div>;
 }
 
 export default App;

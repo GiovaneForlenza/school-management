@@ -1,0 +1,24 @@
+.classes-container {
+  display: flex;
+  // border: 1px solid #000;
+  flex-direction: column;
+  .tabs-container {
+    // border: 1px solid #000;
+    margin-bottom: 10px;
+  }
+  .content-container {
+    display: flex;
+    // border: 1px solid #000;
+    .left,
+    .right {
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    .left {
+      width: 85%;
+    }
+    .right {
+      flex-grow: 1;
+    }
+  }
+}

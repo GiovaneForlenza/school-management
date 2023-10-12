@@ -1,0 +1,32 @@
+.table-actions-container {
+  border: 2px solid #ee2c57;
+  border-radius: 5px;
+  .header {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    background: #ee2c57;
+    color: white;
+    // font-weight: 500;
+    font-size: 20px;
+  }
+  .actions {
+    padding: 0 5px;
+    box-sizing: border-box;
+    user-select: none;
+    .action {
+      border: 1px solid #94a3b8;
+      margin: 10px 0;
+      padding: 5px 10px;
+      border-radius: 3px;
+      text-align: left;
+      color: #ee2c57;
+      &:hover {
+        background: #ee2c57;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+}
