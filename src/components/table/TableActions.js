@@ -9,11 +9,7 @@ function TableActions() {
     <div className="table-actions-container">
       <div className="header">Actions</div>
       <div className="actions">
-        <TableActionButton text={"Edit"} />
-        <TableActionButton text={"Schedule"} />
-        <TableActionButton text={"Lessons"} />
-        <TableActionButton text={"Grades"} />
-        <TableActionButton text={"Enrolled students"} />
+        <TableActionButton text={"More info"} />
       </div>
     </div>
   );

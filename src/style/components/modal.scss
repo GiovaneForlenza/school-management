@@ -1,7 +1,8 @@
+@import "../global.scss";
+
 .modal-container {
   height: 100vh;
   width: 100vw;
-  background-color: #00000024;
   position: absolute;
   top: 0;
   left: 0;
@@ -11,8 +12,9 @@
   .modal-content {
     background: white;
     width: 900px;
-    height: 600px;
-    box-shadow: 1px 1px 5px rgb(94, 94, 94);
+    // height: 600px;
+    padding: 20px;
+    box-shadow: $box-shadow-sm;
     border-radius: 5px;
     .header {
       height: 40px;
@@ -23,6 +25,83 @@
       padding: 15px;
       box-sizing: border-box;
       font-size: 20px;
+    }
+    .content {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+      .class-info {
+        border-bottom: 1px solid #cbcbcb;
+        .line {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          padding: 0 50px;
+          user-select: none;
+          div {
+            margin: 10px;
+            padding: 10px 20px;
+            border-radius: 3000px;
+            // width: 180px;
+            text-align: left;
+            box-shadow: $box-shadow-sm;
+          }
+        }
+      }
+      .modal-tables {
+        flex-grow: 1;
+        margin-top: 10px;
+        .tabs {
+          display: flex;
+          flex-wrap: wrap;
+          background: #e5e5e5;
+        }
+        .input {
+          position: absolute;
+          opacity: 0;
+        }
+        .label {
+          width: 100%;
+          padding: 20px 30px;
+          background: #e5e5e5;
+          cursor: pointer;
+          font-weight: bold;
+          font-size: 18px;
+          color: #7f7f7f;
+          &:hover {
+            background: #d8d8d8;
+          }
+          &:active {
+            background: #ccc;
+          }
+        }
+        .input:focus + .label {
+          z-index: 1;
+        }
+        .input:checked + .label {
+          background: #fff;
+          color: #000;
+        }
+        @media (min-width: 600px) {
+          .label {
+            width: auto;
+          }
+        }
+        .panel {
+          display: none;
+          padding: 20px 30px 30px;
+          background: #fff;
+        }
+        @media (min-width: 600px) {
+          .panel {
+            order: 99;
+          }
+        }
+        .input:checked + .label + .panel {
+          display: block;
+        }
+      }
     }
   }
 }

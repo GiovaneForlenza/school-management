@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../style/components/header.scss";
+import { LoggedInUserContext } from "../context/LoggedInUserContext";
 
 function Header() {
-  return <div className="header-container">Header</div>;
+  const { userState } = useContext(LoggedInUserContext);
+  return <div className="header-container">Hello, {userState.name}</div>;
 }
 
 export default Header;

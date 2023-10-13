@@ -1,12 +1,21 @@
 .table-container {
-  max-height: 650px;
+  max-height: 450px;
   overflow-y: auto;
+  position: relative;
+  border-radius: 5px; /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #8f8f8f #dfe9eb;
+  }
+
+  
   .table-count-container {
     padding: 10px;
     text-align: left;
     background: #ededee;
     font-weight: 500;
     font-size: 17px;
+    margin-top: 5px;
   }
 
   table {
