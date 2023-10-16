@@ -3,6 +3,50 @@ export const CLASS_STATUS = {
   FINISHED: "Finished",
   CANCELED: "Canceled",
 };
+const classesNames = [
+  "Kids 1",
+  "Kids 2",
+  "Kids 3",
+  "Kids 4",
+  "Kids 5",
+  "Tweens 1",
+  "Tweens 2",
+  "Tweens 3",
+  "Tweens 4",
+  "Teens 1",
+  "Teens 2",
+  "Teens 3",
+  "Teens 4",
+  "Teens 5",
+  "Book 1",
+  "Book 2",
+  "Book 3",
+  "Book 4",
+  "Keep Talking 1",
+  "Keep Talking 2",
+  "Keep Talking 3",
+  "Advanced 1",
+  "Advanced 2",
+  "Advanced 3",
+];
+const time = [
+  "8-10 AM",
+  "10-12 PM",
+  "12-2 PM",
+  "2-4 PM",
+  "4-6 PM",
+  "6-8 PM",
+  "8-10 PM",
+];
+const day = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
 
 export const classes = [
   {
@@ -526,3 +570,30 @@ export const classes = [
     teacher: 1,
   },
 ];
+
+function generateRandomClassInfo() {
+  const code = `${Math.round(Math.random() * 9)}${Math.round(
+    Math.random() * 9
+  )}-${Math.round(Math.random() * 9)}${Math.round(Math.random() * 9)}`;
+
+  for (let index = 0; index < 4; index++) {
+    const sDay = Math.round(Math.random() * 27) + 1;
+    const sMonth = Math.round(Math.random() * 12) + 1;
+    const sYear = Math.round(Math.random() * (2023 - 2020)) + 2020;
+    console.log(`
+    {id: ${index},
+    name: '${classesNames[Math.floor(Math.random() * classes.length)]}',
+    code: '${code}',
+    time: '${day[Math.floor(Math.random() * day.length)]}, ${
+      time[Math.floor(Math.random() * time.length)]
+    }',
+    numb_students: ${Math.round(Math.random() * 7) + 3},
+    enrolled_students_ids: [],
+    lesson: ${Math.round(Math.random() * 27) + 1},
+    date_start: '${sDay}/${sMonth}/${sYear}',
+    date_end:'${sDay}/${sMonth}/${sYear + 1}',
+    status: CLASS_STATUS.ACTIVE,
+    teacher: 1},`);
+  }
+}
+// generateRandomClassInfo();
