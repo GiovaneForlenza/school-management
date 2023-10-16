@@ -8,9 +8,9 @@ function ModalTabs() {
         name="tabs"
         type="radio"
         id="tab-1"
-        checked="checked"
+        // checked="checked"
       />
-      <label className="label" for="tab-1">
+      <label className="label" htmlFor="tab-1">
         Arlina Design
       </label>
       <div className="panel">
@@ -27,7 +27,7 @@ function ModalTabs() {
         </p>
       </div>
       <input className="input" name="tabs" type="radio" id="tab-2" />
-      <label className="label" for="tab-2">
+      <label className="label" htmlFor="tab-2">
         Idntheme
       </label>
       <div className="panel">
@@ -38,13 +38,13 @@ function ModalTabs() {
           reticulata).
         </p>
         <p>
-          The name was first used for fruit coming from Tangier, Morocco,
+          The name was first used htmlFor fruit coming from Tangier, Morocco,
           described as a mandarin variety. Under the Tanaka classNameification
           system, Citrus tangerina is considered a separate species.
         </p>
       </div>
       <input className="input" name="tabs" type="radio" id="tab-3" />
-      <label className="label" for="tab-3">
+      <label className="label" htmlFor="tab-3">
         Tekno Match
       </label>
       <div className="panel">
