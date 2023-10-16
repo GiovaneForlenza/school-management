@@ -1,7 +1,7 @@
 import React, {  createContext } from "react";
 import { students } from "../database/Students";
 import { classes } from "../database/Classes";
-import { staff } from "../database/Staff";
+import { STAFF } from "../database/Staff";
 
 export const DatabaseContext = createContext();
 const LOCAL_STORAGE_KEYS = {
@@ -14,7 +14,7 @@ export const DatabaseContextProvider = (props) => {
   
 
   function createInitialDBs() {
-    localStorage.setItem(LOCAL_STORAGE_KEYS.STAFF, JSON.stringify(staff));
+    localStorage.setItem(LOCAL_STORAGE_KEYS.STAFF, JSON.stringify(STAFF));
     localStorage.setItem(LOCAL_STORAGE_KEYS.STUDENTS, JSON.stringify(students));
     localStorage.setItem(LOCAL_STORAGE_KEYS.CLASSES, JSON.stringify(classes));
   }

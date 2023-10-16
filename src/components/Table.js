@@ -4,6 +4,7 @@ import "../style/components/table.scss";
 import TableHeader from "./table/TableHeader";
 
 function Table({ headers, data }) {
+  console.log(data);
   return (
     <div className="table-container">
       <table>
@@ -17,7 +18,7 @@ function Table({ headers, data }) {
         <tbody>
           {data.map((line, id) => {
             // if (line.status === CLASS_STATUS.ACTIVE)
-              return <TableLine line={line} key={id} />;
+            return <TableLine line={line} key={id} />;
           })}
         </tbody>
       </table>

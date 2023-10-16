@@ -27,7 +27,6 @@ function ModalTabs() {
             </thead>
             <tbody>
               {students.map((student) => {
-                console.log(student.enrolled_courses, classState);
                 if (student.enrolled_courses === classState.id) {
                   return (
                     <tr>

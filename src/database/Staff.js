@@ -1,5 +1,5 @@
 const SCHOOL_POSITION = { TEACHER: "Teacher", COORDINATOR: "Coordinator" };
-export const staff = [
+export const STAFF = [
   {
     id: 1,
     name: "Gionave",
