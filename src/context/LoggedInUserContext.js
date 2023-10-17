@@ -17,7 +17,6 @@ export const USER_REDUCER_ACTIONS = {
 function loggedInUserReducer(userState, action) {
   switch (action.type) {
     case USER_REDUCER_ACTIONS.LOG_OUT:
-      alert("log out");
       return { id: null, name: null, position: null };
     case USER_REDUCER_ACTIONS.UPDATE_DATA:
       return {

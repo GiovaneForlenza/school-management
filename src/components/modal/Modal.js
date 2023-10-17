@@ -8,10 +8,13 @@ import {
 import { AiOutlineClose } from "react-icons/ai";
 import { SelectedClassContext } from "../../context/SelectedClassContext";
 import ModalTabs from "./ModalTabs";
+import { LoggedInUserContext } from "../../context/LoggedInUserContext";
+import { SCHOOL_POSITION, STAFF } from "../../database/Staff";
 
 function Modal() {
   const { modalState, dispatch } = useContext(ModalContext);
   const { classState } = useContext(SelectedClassContext);
+  const { userState } = useContext(LoggedInUserContext);
   return (
     <div
       className={`modal-container ${!modalState.is_open ? "hidden" : "show"}`}
@@ -34,8 +37,6 @@ function Modal() {
             <div className="line">
               <div>Code: {classState.code}</div>
               <div>Name: {classState.name}</div>
-              {/* </div> */}
-              {/* <div className="line"> */}
               <div>Start date: {classState.date_start}</div>
               <div>End date: {classState.date_end}</div>
             </div>
@@ -44,6 +45,15 @@ function Modal() {
               <div>Status: {classState.status}</div>
               <div>Lesson: {classState.lesson}</div>
               <div>Students: {classState.numb_students}</div>
+              {userState.position === SCHOOL_POSITION.COORDINATOR ? (
+                <div>
+                  Teacher:{" "}
+                  {
+                    STAFF.filter((staff) => staff.id === classState.teacher)[0]
+                      .name
+                  }
+                </div>
+              ) : null}
             </div>
           </div>
           <div className="modal-tables">

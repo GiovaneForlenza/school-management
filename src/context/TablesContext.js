@@ -7,3 +7,5 @@ export const CLASSES_TABLE_HEADER = [
   "End date",
   "Status",
 ];
+
+export const COORDINATOR_TABLE_HEADER = ["Teacher"];

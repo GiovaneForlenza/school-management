@@ -14,7 +14,6 @@ function LogIn() {
 
   function handleClick() {
     workers.map((worker) => {
-      console.log(userId, worker.id, worker.id == userId);
       if (worker.id == userId) {
         dispatch({
           type: USER_REDUCER_ACTIONS.UPDATE_DATA,
@@ -39,7 +38,7 @@ function LogIn() {
         {workers.map((worker, id) => {
           return (
             <option key={id} value={worker.id}>
-              {worker.name} | <span>{worker.position}</span>
+              {worker.name} | {worker.position}
             </option>
           );
         })}

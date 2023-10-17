@@ -615,4 +615,4 @@ function changeClassesTeacher() {
     teacher: ${clas.teacher}},`);
   });
 }
-changeClassesTeacher();
+// changeClassesTeacher();

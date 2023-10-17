@@ -21,15 +21,17 @@ function ModalTabs() {
         <div className="table-container">
           <table>
             <thead>
-              <th>Name</th>
-              <th>Age</th>
-              <th>Date Enrolled</th>
+              <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Date Enrolled</th>
+              </tr>
             </thead>
             <tbody>
-              {students.map((student) => {
+              {students.map((student, id) => {
                 if (student.enrolled_courses === classState.id) {
                   return (
-                    <tr>
+                    <tr key={id}>
                       <td>{student.name}</td>
                       <td>{student.age}</td>
                       <td>{student.date_enrolled}</td>
