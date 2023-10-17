@@ -39,7 +39,7 @@ function LogIn() {
         {workers.map((worker, id) => {
           return (
             <option key={id} value={worker.id}>
-              {worker.name}
+              {worker.name} | <span>{worker.position}</span>
             </option>
           );
         })}

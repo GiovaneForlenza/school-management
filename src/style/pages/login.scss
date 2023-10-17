@@ -14,8 +14,15 @@
   select {
     width: 80%;
     line-height: 20px;
-    font-size: 35px;
-    padding: 2px;
+    font-size: 30px;
+    padding: 5px;
     margin-bottom: 20px;
+    border-radius: 5px;
+    option {
+      span {
+        font-size: 25px;
+        color: red;
+      }
+    }
   }
 }

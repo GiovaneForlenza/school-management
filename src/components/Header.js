@@ -10,7 +10,7 @@ function Header() {
 
   function handleClick() {
     // TODO(Gionave): Make the logout btn work
-    dispatch({ action: USER_REDUCER_ACTIONS.LOG_OUT, payload: "" });
+    dispatch({ action: USER_REDUCER_ACTIONS.LOG_OUT});
   }
   return (
     <div className="header-container">

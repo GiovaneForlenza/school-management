@@ -4,7 +4,6 @@ import "../style/components/table.scss";
 import TableHeader from "./table/TableHeader";
 
 function Table({ headers, data }) {
-  console.log(data);
   return (
     <div className="table-container">
       <table>
