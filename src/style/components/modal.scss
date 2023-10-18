@@ -122,3 +122,25 @@
 .show {
   display: flex;
 }
+
+@media only screen and (max-width: 600px) {
+  .modal-container {
+    .modal-content {
+      overflow: auto;
+      max-height: 500px;
+      max-width: 90vw;
+      .content {
+        .class-info {
+          padding: 0;
+          .line {
+            padding: 0;
+            // flex-direction: column;
+            flex-wrap: wrap;
+            // align-items: flex-start;
+            // justify-content: flex-start;
+          }
+        }
+      }
+    }
+  }
+}

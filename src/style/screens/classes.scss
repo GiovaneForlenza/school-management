@@ -21,3 +21,15 @@
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .classes-container {
+    .content-container {
+      flex-direction: column;
+      .left,
+      .right {
+        width: 100%;
+      }
+    }
+  }
+}

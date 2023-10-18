@@ -1,5 +1,5 @@
-import React, { useContext, useEffect } from "react";
-import "../style/screes/classes.scss";
+import React, { useContext } from "react";
+import "../style/screens/classes.scss";
 import Table from "../components/Table";
 import { LoggedInUserContext } from "../context/LoggedInUserContext";
 import { CLASSES_TABLE_HEADER } from "../context/TablesContext";
